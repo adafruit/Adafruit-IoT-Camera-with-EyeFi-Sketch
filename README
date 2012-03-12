@@ -1,0 +1,10 @@
+This is an Arduino sketch for using the Adafruit TTL Serial JPEG Cameras with an Eye-Fi card for wireless snaps.
+
+To download, click the ZIP button below. Decompress the archive, rename the resulting folder to Adafruit_EyeFi and place it in your Arduino sketchbook folder. Restart the Arduino IDE, and the sketch should be available from the Sketchbook menu.
+
+Also requires the VC0706 Serial Camera Library and RTClib:  
+https://github.com/adafruit/Adafruit-VC0706-Serial-Camera-Library
+https://github.com/adafruit/RTClib
+
+We highly recommend initializing the Eye-Fi card using the SdFormatter sketch included with the SdFat library:
+http://code.google.com/p/sdfatlib/downloads/detail?name=sdfatlib20111205.zip&can=2&q=
