@@ -55,10 +55,10 @@ http://www.adafruit.com/products/14
 #else
  #include <NewSoftSerial.h>
 #endif
-#include <VC0706.h> // Serial JPEG camera library
-#include <SD.h>     // SD card library
-#include <RTClib.h> // Realtime clock library
-#include <Wire.h>   // Also needed for RTC
+#include <Adafruit_VC0706.h> // Serial JPEG camera library
+#include <SD.h>              // SD card library
+#include <RTClib.h>          // Realtime clock library
+#include <Wire.h>            // Also needed for RTC
 
 // This sketch uses the hardware serial UART (on pins 0 & 1) for more
 // robust communication with the camera.  Unfortunately this means we
@@ -84,13 +84,13 @@ PROGMEM byte sleepTab[] = {
 // Sparkfun SD shield: pin 8
 #define chipSel 10
 
-RTC_DS1307 clock;
-VC0706     cam = VC0706(&Serial);
-char       directory[] = "DCIM/CANON999", // Emulate Canon folder layout
-           filename[]  = "DCIM/CANON999/IMG_0000.JPG";
-byte       sleepPos; // Current "throb" table position
-int        imgNum      = 0;
-const int  minFileSize = 20 * 1024; // Eye-Fi requires minimum file size
+RTC_DS1307      clock;
+Adafruit_VC0706 cam = Adafruit_VC0706(&Serial);
+char            directory[] = "DCIM/CANON999", // Emulate Canon folder layout
+                filename[]  = "DCIM/CANON999/IMG_0000.JPG";
+byte            sleepPos; // Current "throb" table position
+int             imgNum      = 0;
+const int       minFileSize = 20 * 1024; // Eye-Fi requires minimum file size
 
 // -------------------------------------------------------------------------
 
