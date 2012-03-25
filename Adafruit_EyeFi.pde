@@ -1,6 +1,7 @@
 /*
 This Arduino sketch combines a serial JPEG camera, data logging shield
 and an Eye-Fi wireless SD card in order to provide remote monitoring.
+SEE NOTES LATER IN CODE REGARDING "X2" CARDS - MUST EXPLICITLY ENABLE.
 
 After initializing the hardware, the sketch sets the camera to motion-
 detect mode and then runs in a loop monitoring for changes.  When
@@ -109,13 +110,17 @@ void setup() {
   // make sure those pins are never used as outputs for any features you
   // might add to this sketch!
   pinMode(2,INPUT); pinMode(3,INPUT);
- 
+
   Wire.begin();  // IMPORTANT: the clock should have previously been set
   clock.begin(); // using the 'ds1307' example sketch included with RTClib.
   SdFile::dateTimeCallback(dateTime); // Register timestamp callback
   if(!clock.isrunning()) error(75);   // Init clock; error = hyper flash
   if(!SD.begin(chipSel)) error(250);  // Init SD card; error = quick flash
   if(!cam.begin())       error(1000); // Init camera; error = slow flash
+
+  // Un-comment this line if using an Eye-Fi X2 card:
+  // SD.enableCRC(true);
+
   // Create image directory if not already present; error = solid red
   if(!SD.exists(directory) && !SD.mkdir(directory)) error(1);
 
