@@ -10,8 +10,8 @@ The files in this repository accompanied the tutorial http://www.ladyada.net/mak
 and were moved to https://github.com/adafruit/Adafruit_Learning_System_Guides/tree/master/Adafruit_IoT_Camera_EyeFi
 
 Also requires the VC0706 Serial Camera Library and RTClib:  
-https://github.com/adafruit/Adafruit-VC0706-Serial-Camera-Library
-https://github.com/adafruit/RTClib
+- https://github.com/adafruit/Adafruit-VC0706-Serial-Camera-Library
+- https://github.com/adafruit/RTClib
 
 All code MIT License, please keep attribution to Adafruit Industries, Limor Fried
 
